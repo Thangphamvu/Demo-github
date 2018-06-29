@@ -1,28 +1,92 @@
 .App {
+  width: 100%;
   text-align: center;
+  font-family: 'Roboto',Arial,sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+ul {
+  list-style: none;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+li {
+  position: relative;
+  font-size: 24px;
+  border-bottom: 1px solid grey;
 }
 
-.App-title {
-  font-size: 1.5em;
+.h1 {
+  font-size: 100px;
+  color: rgba(175, 47, 47, 0.15);
 }
 
-.App-intro {
-  font-size: large;
+.mt-15 {
+  margin-top: 15px
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.mr-5 {
+  margin-right: 5px
+}
+
+.ml-5 {
+  margin-left: 5px
+}
+
+.pr-5 {
+  padding-right: 5px
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.main{
+  width: 40%;
+  margin: auto;
+  position: relative;
+}
+
+.todo {
+  display: block;
+  width: 100%;
+}
+
+.new-todo {
+  width: 100%;
+  padding : 15px 15px 15px 60px;
+  font-size: 24px;
+  border: none;
+  background: rgba(0, 0, 0, 0.014);
+  box-shadow: inset 0 -2px 2px rgba(0, 0, 0, 0.219);
+}
+
+.toggle-all {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border: none;
+}
+
+.toggle {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: -30px;
+  border: none;
+}
+
+.delete {
+  position: absolute;
+  top : 3px;
+  right: 10px;
+}
+
+.left {
+  float: left;
+}
+
+.center {
+  margin: auto;
 }
