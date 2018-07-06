@@ -6,33 +6,34 @@ const sml = () => {
 
 const generateID = () => {
     return sml() + '-' + sml() + sml()
-    + '-' + sml() + sml() + sml()
-    + '-' + sml() + sml() + sml() + sml()
-    + '-' + sml() + sml() + sml() + sml() + sml()
-    + '-' + sml() + sml() + sml() + sml() + sml() + sml()
-    + '-' + sml() + sml() + sml() + sml() + sml()
-    + '-' + sml() + sml() + sml() + sml()
-    + '-' + sml() + sml() + sml()
-    + '-' + sml() + sml() + '-' + sml()
+        + '-' + sml() + sml() + sml()
+        + '-' + sml() + sml() + sml() + sml()
+        + '-' + sml() + sml() + sml() + sml() + sml()
+        + '-' + sml() + sml() + sml() + sml() + sml() + sml()
+        + '-' + sml() + sml() + sml() + sml() + sml()
+        + '-' + sml() + sml() + sml() + sml()
+        + '-' + sml() + sml() + sml()
+        + '-' + sml() + sml() + '-' + sml()
 }
 
-let data = JSON.parse(localStorage.getItem('items'));
-let initialState = data ? data : [];
-let myReducer = (state=initialState, action) => {
-    switch(action.types){
+let data = JSON.parse(localStorage.getItem('items')) || [];
+// let initialState = data ? data : [{ name: "abc", status: false }, { name: "def", status: false }];
+const items = (state = data, action) => {
+    switch (action.type) {
         case types.LIST_ALL:
             return state;
         case types.ADD_ITEM:
             let newItem = {
                 id: generateID(),
                 name: action.item.name,
-                status : action.item.status
+                status: action.item.status
             };
-            state.push(newItem);
-            localStorage.setItem('items',state);
-            return [...state];
-        default : return state;
+            const newState = [...state, newItem]
+            localStorage.setItem('items', JSON.stringify(newState));
+            return newState;
+        default:
+            return state;
     }
 };
 
-export default myReducer;
+export default items;

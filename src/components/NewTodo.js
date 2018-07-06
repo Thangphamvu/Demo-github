@@ -13,6 +13,13 @@ class NewTodo extends Component {
     }
   }
 
+  onResetForm = () => {
+    this.setState({
+      id: '',
+      name : '',
+    });
+  }
+
   onChange = (event) => {
     var target = event.target;
     var name = target.name;
@@ -28,12 +35,13 @@ class NewTodo extends Component {
   onSubmit = (event) => {
     event.preventDefault();
     this.props.onAddItem(this.state);
+    this.onResetForm();
   }
 
   render() {
     return (
       <div className="todo">
-        <form onSubmit={this.onSubmit} >
+        <form onSubmit={this.onSubmit.bind(this)} >
           <input
             className="new-todo" type="text" placeholder="What needs to be done?"
             name='name' value={this.state.name} onChange={this.onChange}

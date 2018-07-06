@@ -3,16 +3,24 @@ import TodoItem from './TodoItem';
 import { connect } from 'react-redux';
 
 class TodoList extends Component {
+
+  showItems(items) {
+    let result = null;
+    if(items.length > 0){
+      result = items.map((item, index) => {
+        return <TodoItem key={index} item = {item} />
+      });
+    }
+    return result;
+  }
+
   render() {
     const { items } = this.props;
-    let elmItem = items.map((item, index) => {
-      return <TodoItem key={item.id} item={item} />
-    });
     return (
       <div>
         <input className="toggle-all" type="checkbox" />
         <ul>
-          {elmItem}
+          {this.showItems(items)}
         </ul>
       </div>
     );
