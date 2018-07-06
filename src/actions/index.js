@@ -12,3 +12,23 @@ export const addItem = (item) => {
         item
     }
 };
+
+export const updateStatus = (id) => {
+    return {
+        type : types.UPDATE_STATUS,
+        id
+    }
+};
+
+export const deleteItem = (id) => {
+    return {
+        type : types.DELETE_ITEM,
+        id
+    }
+};
+
+export const toggleStatus = () => {
+    return {
+        type : types.TOGGLE_STATUS,
+    }
+}
