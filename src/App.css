@@ -83,10 +83,26 @@ li {
   right: 10px;
 }
 
-.left {
-  float: left;
+.footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.center {
+.footer .left {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.footer .right {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+
+.footer .center {
   margin: auto;
+  margin: 0;
+  padding: 0;
 }

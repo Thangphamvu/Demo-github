@@ -16,7 +16,7 @@ class TodoItem extends Component {
         const { item } = this.props;
         return (
             <li>
-                <input className="toggle" type="checkbox" onClick={this.onUpdateStatus} />
+                <input className="toggle" type="checkbox" onChange={this.onUpdateStatus} checked={item.status} />
                 <label>{item.name}</label>
                 <button className="btn btn-danger delete" onClick={this.onDeleteItem} >
                     <i className="fa fa-times-circle"></i>
@@ -26,8 +26,10 @@ class TodoItem extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {};
+const mapStateToProps = (state, ownProps) => {
+    return {
+        item: ownProps.item
+    };
 };
 
 const mapDispatchToProps = (dispatch, props) => {
